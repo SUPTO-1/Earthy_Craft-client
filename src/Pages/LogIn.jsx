@@ -1,48 +1,54 @@
+import { FcGoogle } from "react-icons/fc";
+import { FaGithub } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import login from '../../public/images/login.jpg'
+import login from '../../public/images/login.jpg';
 const LogIn = () => {
   return (
-    <div className="md:px-16 ">
-      <div className="hero min-h-screen bg-base-200 font-poppins rounded-lg">
-        <div className="hero-content flex-col lg:flex-row-reverse gap-24">
-          <div className="text-center lg:text-left">
-            <h1 className="text-5xl font-poppins font-bold text-[#253b34] md:mb-4">Login now!</h1>
-            <p className="py-6 text-[18px]">
-            Explore the timeless elegance of jute and wooden crafts at our website. From exquisite home decor to eco-friendly accessories, discover artisanal pieces that blend sustainability with style. Sign in now to unlock exclusive offers and indulge in the beauty of natural materials reimagined for modern living.
-            </p>
-          </div>
-          <div className="card shrink-0 w-full max-w-xl shadow-2xl bg-base-100">
-            <form className="card-body">
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Email</span>
-                </label>
-                <input
-                  type="email"
-                  placeholder="email"
-                  className="input input-bordered"
-                  required
-                />
-              </div>
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Password</span>
-                </label>
-                <input
-                  type="password"
-                  placeholder="password"
-                  className="input input-bordered"
-                  required
-                />
-              </div>
-              <div className="form-control mt-6">
-                <button className="btn btn-primary">Login</button>
-              </div>
-              <p className="text-center mt-4">Do not have an account? <Link to="/register" className="text-primary font-bold">Register</Link></p>
-            </form>
-          </div>
-        </div>
+    <div className="px-16 py-10 mx-2 md:mx-16 font-poppins lg:flex flex-row-reverse gap-5 border-2 rounded-lg shadow-lg">
+      <div className="flex-1">
+        <img className="w-full rounded-lg" src={login} alt="" />
       </div>
+        <div className="flex-1">
+        <h2 className="text-3xl text-center font-poppins mt-4 lg:mt-0 font-bold">LogIn Now</h2>
+      <form className="card-body">
+        <div className="form-control w-full mx-auto">
+          <label className="label">
+            <span className="label-text text-xl">Email</span>
+          </label>
+          <input
+            type="email"
+            placeholder="Enter Your Email"
+            className="input input-bordered"
+            name="email"
+            required
+          />
+        </div>
+        <div className="form-control w-full mx-auto">
+          <label className="label">
+            <span className="label-text text-xl">Password</span>
+          </label>
+          <input
+            type="password"
+            placeholder="Enter Your Password"
+            className="input input-bordered"
+            name="password"
+            required
+          />
+        </div>
+        <div  className="form-control w-full mt-6 mb-2 mx-auto">
+          <button className="btn btn-primary">Login</button>
+        </div>
+        <button className="btn mb-2 w-full mx-auto">
+          <FcGoogle className="text-xl" />
+          Login With Google
+        </button>
+        <button className="btn w-full mx-auto">
+          <FaGithub className="text-xl" />
+          Login With Github
+        </button>
+      </form>
+      <p className="text-center text-lg">Do not have an account?<Link to='/register' className="text-blue-500 ml-2 font-bold">Register</Link></p>
+        </div>
     </div>
   );
 };
