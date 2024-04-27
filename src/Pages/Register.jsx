@@ -53,7 +53,7 @@ const Register = () => {
         .then((result) => {
           const createdUser = result.user;
           setUser(createdUser)
-          console.log(createdUser);
+          // console.log(createdUser);
           Swal.fire({
             title: 'success!',
             text: 'User created successfully',
@@ -69,11 +69,11 @@ const Register = () => {
             icon: 'Error',
             confirmButtonText: 'Okay'
           })
-        });
+        })
 
 
     //authentication here ends
-  };
+  }
   return (
     <div className="px-16 py-10 mx-2 md:mx-16 font-poppins lg:flex flex-row-reverse gap-5 border-2 rounded-lg shadow-lg">
       <div className="flex-1">

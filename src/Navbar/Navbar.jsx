@@ -1,12 +1,12 @@
 import { Link, NavLink } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
-import DarkModeToggle from "react-dark-mode-toggle";
 import { AuthContext } from "../Providers/AuthProvider";
 import Swal from 'sweetalert2'
+import DarkModeToggle from "react-dark-mode-toggle";
 
 const Navbar = () => {
-  const [isDarkMode, setIsDarkMode] = useState(() => false);
   const { user, loading,logOut } = useContext(AuthContext);
+  const [isDarkMode, setIsDarkMode] = useState(() => false);
   const [displayName, setDisplayName] = useState("");
   const [photoURL, setPhotoURL] = useState("");
   useEffect(() => {
@@ -25,7 +25,6 @@ const Navbar = () => {
     logOut()
       .then((result) => {
         console.log(result);
-        // toast.success("User logged out successfully");
         Swal.fire({
           title: 'success!',
           text: 'Logout successfully',
@@ -89,7 +88,7 @@ const Navbar = () => {
           <span className="text-[#253b34] md:text-[24px] md:ml-2 md:font-bold font-poppins">
             /
           </span>
-          <Link to={"/register"}>
+          <Link to="/register">
             <a className="text-[#253b34] md:text-[24px] md:ml-2 font-poppins md:font-bold">
               Sign Up
             </a>
@@ -119,6 +118,7 @@ const Navbar = () => {
           size={80}
         />
       </div>
+
     </div>
   );
 };
