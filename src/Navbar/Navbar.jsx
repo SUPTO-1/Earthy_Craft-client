@@ -1,9 +1,42 @@
 import { Link, NavLink } from "react-router-dom";
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import DarkModeToggle from "react-dark-mode-toggle";
+import { AuthContext } from "../Providers/AuthProvider";
+import Swal from 'sweetalert2'
 
 const Navbar = () => {
   const [isDarkMode, setIsDarkMode] = useState(() => false);
+  const { user, loading,logOut } = useContext(AuthContext);
+  const [displayName, setDisplayName] = useState("");
+  const [photoURL, setPhotoURL] = useState("");
+  useEffect(() => {
+    if (user) {
+      setDisplayName(user.displayName);
+      setPhotoURL(user.photoURL);
+    } else {
+      setDisplayName("");
+      setPhotoURL("");
+    }
+  }, [user]);
+  if (loading) {
+    return <progress className="progress w-56"></progress>;
+  }
+  const handleLogOut = () => {
+    logOut()
+      .then((result) => {
+        console.log(result);
+        // toast.success("User logged out successfully");
+        Swal.fire({
+          title: 'success!',
+          text: 'Logout successfully',
+          icon: 'success',
+          confirmButtonText: 'Okay'
+        })
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   const links = (
     <>
       <li className="font-poppins ">
@@ -46,15 +79,39 @@ const Navbar = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
-      <div className="navbar-end">
-        <Link to="/login"><a className="text-[#253b34] md:text-[24px] md:font-bold font-poppins">
-          Login
-        </a></Link>
-        <span className="text-[#253b34] md:text-[24px] md:ml-2 md:font-bold font-poppins">/</span>
-        <Link to={"/register"}><a className="text-[#253b34] md:text-[24px] md:ml-2 font-poppins md:font-bold">
-          Sign Up
-        </a></Link>
-      </div>
+      {!user ? (
+        <div className="navbar-end">
+          <Link to="/login">
+            <a className="text-[#253b34] md:text-[24px] md:font-bold font-poppins">
+              Login
+            </a>
+          </Link>
+          <span className="text-[#253b34] md:text-[24px] md:ml-2 md:font-bold font-poppins">
+            /
+          </span>
+          <Link to={"/register"}>
+            <a className="text-[#253b34] md:text-[24px] md:ml-2 font-poppins md:font-bold">
+              Sign Up
+            </a>
+          </Link>
+        </div>
+      ) : (
+        <div className="navbar-end">
+          <div
+            tabIndex={0}
+            role="button"
+            className="btn btn-ghost btn-circle avatar tooltip tooltip-bottom"
+            data-tip={displayName}
+          >
+            <div className="w-10 rounded-full">
+              <img alt="" src={photoURL} />
+            </div>
+          </div>
+          <Link onClick={handleLogOut}>
+            <a className="btn w-[100px]">Logout</a>
+          </Link>
+        </div>
+      )}
       <div className="ml-4">
         <DarkModeToggle
           onChange={setIsDarkMode}
