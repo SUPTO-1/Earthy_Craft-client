@@ -3,7 +3,7 @@ import Swal from "sweetalert2";
 
 const UpdateCraft = () => {
     const craft = useLoaderData();
-    const {email, name, itemName, subcategoryName, photo, stock, price, rating, customization, time , description} = craft;
+    const {itemName, subcategoryName, photo, stock, price, rating, customization, time , description} = craft;
     const handleUpdateCraft = (e) => {
         e.preventDefault();
         const form = new FormData(e.target);
@@ -164,7 +164,7 @@ const UpdateCraft = () => {
         </div>
         </div>
         <div className="form-control w-full mt-6 mx-auto">
-          <button className="btn btn-primary">Add Item</button>
+          <button className="btn btn-primary">Update Craft</button>
         </div>
       </form>
     </div>
