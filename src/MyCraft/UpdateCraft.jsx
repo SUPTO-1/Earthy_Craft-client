@@ -1,4 +1,9 @@
+import { useLoaderData } from "react-router-dom";
+import Swal from "sweetalert2";
+
 const UpdateCraft = () => {
+    const craft = useLoaderData();
+    const {email, name, itemName, subcategoryName, photo, stock, price, rating, customization, time , description} = craft;
     const handleUpdateCraft = (e) => {
         e.preventDefault();
         const form = new FormData(e.target);
@@ -15,6 +20,28 @@ const UpdateCraft = () => {
         const description= form.get("description");
         const updateCraft = {email, name, itemName, subcategoryName, photo, stock, price, rating, customization, time , description};
         console.log(updateCraft);
+
+        // server e pathano hobe
+
+        fetch(`http://localhost:5000/crafts/${craft._id}`, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(updateCraft)
+        })
+        .then(res=>res.json())
+        .then(data =>{
+            if(data.modifiedCount > 0){
+              Swal.fire({
+                title: 'success!',
+                text: 'Coffee Updated Successfully',
+                icon: 'success',
+                confirmButtonText: 'Okay'
+              });
+              form.reset();
+            }
+        })
     }
     return (
         <div>
@@ -27,7 +54,7 @@ const UpdateCraft = () => {
           </label>
           <input
             type="text"
-            placeholder="Enter Item Name"
+            defaultValue={itemName}
             className="input input-bordered"
             name="item_name"
             required
@@ -39,7 +66,7 @@ const UpdateCraft = () => {
           </label>
           <input
             type="text"
-            placeholder="Enter Subcategory Name"
+            defaultValue={subcategoryName}
             className="input input-bordered"
             name="subcategory_Name"
             required
@@ -53,7 +80,7 @@ const UpdateCraft = () => {
           </label>
           <input
             type="text"
-            placeholder="Enter Photo Url"
+            defaultValue={photo}
             className="input input-bordered"
             name="photo"
             required
@@ -65,7 +92,7 @@ const UpdateCraft = () => {
           </label>
           <input
             type="text"
-            placeholder="Stock Status"
+            defaultValue={stock}
             className="input input-bordered"
             name="stock"
             required
@@ -79,7 +106,7 @@ const UpdateCraft = () => {
           </label>
           <input
             type="text"
-            placeholder="Price"
+            defaultValue={price}
             className="input input-bordered"
             name="price"
             required
@@ -91,7 +118,7 @@ const UpdateCraft = () => {
           </label>
           <input
             type="text"
-            placeholder="Rating"
+            defaultValue={rating}
             className="input input-bordered"
             name="rating"
             required
@@ -103,7 +130,7 @@ const UpdateCraft = () => {
           </label>
           <input
             type="text"
-            placeholder="Customization"
+            defaultValue={customization}
             className="input input-bordered"
             name="customization"
             required
@@ -115,7 +142,7 @@ const UpdateCraft = () => {
           </label>
           <input
             type="text"
-            placeholder="Processing Time"
+            defaultValue={time}
             className="input input-bordered"
             name="time"
             required
@@ -129,7 +156,7 @@ const UpdateCraft = () => {
           </label>
           <input
             type="text"
-            placeholder="Description"
+            defaultValue={description}
             className="input input-bordered"
             name="description"
             required
