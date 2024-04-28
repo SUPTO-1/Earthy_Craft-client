@@ -8,11 +8,13 @@ import AllCrafts from "../AllCrafts/AllCrafts";
 import CraftDetails from "../AllCrafts/CraftDetails";
 import MyCraft from "../MyCraft/MyCraft";
 import UpdateCraft from "../MyCraft/UpdateCraft";
+import Error from "../Error/Error";
 
 const routes = createBrowserRouter([
     {
         path: "/",
         element:<Root></Root>,
+        errorElement:<Error></Error>,
         children: [
             {
                 path: "/",

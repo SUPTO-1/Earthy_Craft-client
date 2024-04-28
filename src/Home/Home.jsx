@@ -1,5 +1,6 @@
 import ArtCategories from "../ArtCategory/ArtCategories";
 import Banner from "./Banner";
+import ContactUs from "./ContactUs";
 import JuteCrafts from "./JuteCrafts";
 import QuestionAndAnswer from "./QuestionAndAnswer";
 
@@ -10,6 +11,7 @@ const Home = () => {
             <JuteCrafts></JuteCrafts>
             <ArtCategories></ArtCategories>
             <QuestionAndAnswer></QuestionAndAnswer>
+            <ContactUs></ContactUs>
         </div>
     );
 };
