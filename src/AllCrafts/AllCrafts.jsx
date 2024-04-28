@@ -35,7 +35,7 @@ const AllCrafts = () => {
                         <td className="font-lato md:text-lg font-semibold">{craft.itemName}</td>
                         <td className="font-lato md:text-lg font-semibold">{craft.subcategoryName}</td>
                         <td className="font-lato md:text-lg font-semibold">{craft.price}</td>
-                        <td className="font-lato md:text-lg font-semibold "><Link to={`/craftDetails/${craft._id}`}><a className="btn btn-primary" href="">View Details</a></Link></td>
+                        <td className="font-lato md:text-lg font-semibold "><Link to={`/craftDetails/${craft._id}`}><a className="btn bg-slate-700 text-white" href="">View Details</a></Link></td>
                     </tr>
                     );
                 })
