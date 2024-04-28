@@ -1,8 +1,10 @@
 import { FaStar } from "react-icons/fa6";
 import { TbCoinTakaFilled } from "react-icons/tb";
+import Swal from "sweetalert2";
 
 const MyCraftSingle = ({ craft }) => {
   const {
+    _id,
     itemName,
     price,
     rating,
@@ -10,6 +12,34 @@ const MyCraftSingle = ({ craft }) => {
     photo,
     stock,
   } = craft;
+  const handleDelete = (_id) => {
+      console.log(_id);
+      Swal.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!"
+      }).then(result =>{
+          if(result.isConfirmed){
+            fetch(`http://localhost:5000/crafts/${_id}`,{
+                method:'DELETE',
+            })
+            .then(res=>res.json())
+            .then(data=>{
+                if(data.deletedCount > 0){
+                    Swal.fire({
+                        title: "Deleted!",
+                        text: "Your Coffee has been deleted.",
+                        icon: "success"
+                      });
+                }
+            })
+          }
+      })
+  }
   return (
     <div className="card rounded-lg bg-base-100 shadow-lg border-2">
       <div className="card-body mb-2">
@@ -39,7 +69,7 @@ const MyCraftSingle = ({ craft }) => {
           </h2>
         </div>
         <div className="flex justify-between mt-6">
-          <button className="btn bg-slate-700 text-white ">Delete</button>
+          <button onClick={()=>handleDelete(_id)} className="btn bg-slate-700 text-white ">Delete</button>
           <button className="btn bg-slate-700 text-white ">Update</button>
         </div>
       </div>
