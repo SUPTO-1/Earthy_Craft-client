@@ -1,5 +1,6 @@
 import { FaStar } from "react-icons/fa6";
 import { TbCoinTakaFilled } from "react-icons/tb";
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const MyCraftSingle = ({ craft , singleCraft , setSingleCraft }) => {
@@ -72,7 +73,7 @@ const MyCraftSingle = ({ craft , singleCraft , setSingleCraft }) => {
         </div>
         <div className="flex justify-between mt-6">
           <button onClick={()=>handleDelete(_id)} className="btn bg-slate-700 text-white ">Delete</button>
-          <button className="btn bg-slate-700 text-white ">Update</button>
+          <Link to={`/updateCraft/${_id}`}><button className="btn bg-slate-700 text-white ">Update</button></Link>
         </div>
       </div>
     </div>

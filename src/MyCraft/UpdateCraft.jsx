@@ -1,76 +1,25 @@
-import Swal from 'sweetalert2'
-const AddCraft = () => {
-  const handleAddCraft = (e) => {
-    e.preventDefault();
-    const form = new FormData(e.target);
-    const email = form.get("email");
-    const name = form.get("name");
-    const itemName = form.get("item_name");
-    const subcategoryName = form.get("subcategory_Name");
-    const photo = form.get("photo");
-    const stock = form.get("stock");
-    const price = form.get("price");
-    const rating = form.get("rating");
-    const customization = form.get("customization");
-    const time= form.get("time");
-    const description= form.get("description");
-    const newCraft = {email, name, itemName, subcategoryName, photo, stock, price, rating, customization, time , description};
-    console.log(email, name, itemName, subcategoryName, photo, stock, price, rating, customization, time);
-
-    //send to the data
-    fetch('http://localhost:5000/crafts', {
-      method: 'POST',
-      headers:
-      {
-        'content-type': 'application/json'
-      },
-      body: JSON.stringify(newCraft)
-
-    })
-    .then(res=>res.json())
-    .then(data=>{
-      console.log(data);
-      if(data.acknowledged){
-        Swal.fire({
-          title: 'success!',
-          text: 'User created successfully',
-          icon: 'success',
-          confirmButtonText: 'Okay'
-        })
-        document.querySelectorAll('input').forEach(input => input.value = '');
-      }
-    })
-  }
-  return (
-    <div>
-      <h2 className="text-3xl font-poppins font-bold text-center mb-10 text-[#3A4256]">Add Craft</h2>
-      <form onSubmit={handleAddCraft} className="card-body p-16 bg-slate-100 mx-4 rounded-lg shadow-md">
-        <div className="md:flex gap-5">
-        <div className="form-control w-full mx-auto">
-          <label className="label">
-            <span className="label-text text-xl">Email</span>
-          </label>
-          <input
-            type="email"
-            placeholder="Enter Your Email"
-            className="input input-bordered"
-            name="email"
-            required
-          />
-        </div>
-        <div className="form-control w-full mx-auto">
-          <label className="label">
-            <span className="label-text text-xl">Name</span>
-          </label>
-          <input
-            type="text"
-            placeholder="Enter Your name"
-            className="input input-bordered"
-            name="name"
-            required
-          />
-        </div>
-        </div>
+const UpdateCraft = () => {
+    const handleUpdateCraft = (e) => {
+        e.preventDefault();
+        const form = new FormData(e.target);
+        const email = form.get("email");
+        const name = form.get("name");
+        const itemName = form.get("item_name");
+        const subcategoryName = form.get("subcategory_Name");
+        const photo = form.get("photo");
+        const stock = form.get("stock");
+        const price = form.get("price");
+        const rating = form.get("rating");
+        const customization = form.get("customization");
+        const time= form.get("time");
+        const description= form.get("description");
+        const updateCraft = {email, name, itemName, subcategoryName, photo, stock, price, rating, customization, time , description};
+        console.log(updateCraft);
+    }
+    return (
+        <div>
+            <h2 className="text-3xl font-poppins font-bold text-center mb-10 text-[#3A4256]">Update Craft</h2>
+      <form onSubmit={handleUpdateCraft} className="card-body p-16 bg-slate-100 mx-4 rounded-lg shadow-md">
         <div className="md:flex gap-5">
         <div className="form-control w-full mx-auto">
           <label className="label">
@@ -192,7 +141,7 @@ const AddCraft = () => {
         </div>
       </form>
     </div>
-  );
+    );
 };
 
-export default AddCraft;
+export default UpdateCraft;

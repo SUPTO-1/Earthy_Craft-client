@@ -7,6 +7,7 @@ import AddCraft from "../AddCraft/AddCraft";
 import AllCrafts from "../AllCrafts/AllCrafts";
 import CraftDetails from "../AllCrafts/CraftDetails";
 import MyCraft from "../MyCraft/MyCraft";
+import UpdateCraft from "../MyCraft/UpdateCraft";
 
 const routes = createBrowserRouter([
     {
@@ -42,6 +43,11 @@ const routes = createBrowserRouter([
                 path:'/myCraft/:email',
                 element:<MyCraft></MyCraft>,
                 loader:({params})=>fetch(`http://localhost:5000/crafts/user/${params.email}`)
+            },
+            {
+                path:`/updateCraft/:id`,
+                element:<UpdateCraft></UpdateCraft>,
+                loader:({params})=>fetch(`http://localhost:5000/crafts/${params.id}`)
             }
         ]
     }
