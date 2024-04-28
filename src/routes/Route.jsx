@@ -4,6 +4,7 @@ import Home from "../Home/Home";
 import LogIn from "../Pages/LogIn";
 import Register from "../Pages/Register";
 import AddCraft from "../AddCraft/AddCraft";
+import AllCrafts from "../AllCrafts/AllCrafts";
 
 const routes = createBrowserRouter([
     {
@@ -25,6 +26,10 @@ const routes = createBrowserRouter([
             {
                 path:'/add',
                 element:<AddCraft></AddCraft>
+            },
+            {
+                path:'/all',
+                element:<AllCrafts></AllCrafts>
             }
         ]
     }
