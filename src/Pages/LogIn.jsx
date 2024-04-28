@@ -8,7 +8,7 @@ import Swal from "sweetalert2";
 import { GithubAuthProvider } from "firebase/auth";
 import { GoogleAuthProvider } from "firebase/auth";
 const LogIn = () => {
-  const { logIn, googleSignIn , githubSignIn } = useContext(AuthContext);
+  const { logIn, googleSignIn, githubSignIn } = useContext(AuthContext);
   const githubProvider = new GithubAuthProvider();
   const provider = new GoogleAuthProvider();
   const handleLogin = (e) => {
@@ -29,7 +29,7 @@ const LogIn = () => {
           text: "User logged in successfully",
           icon: "success",
           confirmButtonText: "Okay",
-        })
+        });
       })
       .catch((error) => {
         console.log(error);
@@ -39,13 +39,12 @@ const LogIn = () => {
           text: "Password and E-mail doesn't Match",
           icon: "error",
           confirmButtonText: "Okay",
-        })
-      })
-  }
-  const handleGoogle = () =>
-    {
-      googleSignIn(provider)
-      .then(result=>{
+        });
+      });
+  };
+  const handleGoogle = () => {
+    googleSignIn(provider)
+      .then((result) => {
         const loggedUser = result.user;
         console.log(loggedUser);
         Swal.fire({
@@ -53,33 +52,32 @@ const LogIn = () => {
           text: "User logged in successfully",
           icon: "success",
           confirmButtonText: "Okay",
-        })
+        });
       })
-      .catch(error=>{
+      .catch((error) => {
         console.log(error);
         Swal.fire({
           title: "error!",
           text: "Password and E-mail doesn't Match",
           icon: "error",
           confirmButtonText: "Okay",
-        })
-      })
-    }
-  const handleGithub = () =>
-    {
-      githubSignIn(githubProvider)
-      .then(()=>{
+        });
+      });
+  };
+  const handleGithub = () => {
+    githubSignIn(githubProvider)
+      .then(() => {
         // const loggedUser = result.user;
         // console.log(loggedUser);
         alert("User logged in successfully");
       })
-      .catch((error)=>{
+      .catch((error) => {
         console.log(error);
         alert("Password and E-mail doesn't Match");
-      })
-    }
+      });
+  };
   return (
-    <div className="px-16 py-10 mx-2 md:mx-16 font-poppins lg:flex flex-row-reverse gap-5 border-2 rounded-lg shadow-lg">
+    <div className="px-16 py-6 mx-2 md:mx-16 font-poppins lg:flex flex-row-reverse gap-5 border-2 rounded-lg shadow-lg">
       <div className="flex-1">
         <img className="w-full rounded-lg" src={login} alt="" />
       </div>
@@ -112,17 +110,17 @@ const LogIn = () => {
               required
             />
           </div>
-          <div className="form-control w-full mt-6 mb-2 mx-auto">
+          <div className="form-control w-full mt-6 mx-auto">
             <button className="btn btn-primary">Login</button>
           </div>
           <button onClick={handleGoogle} className="btn mb-2 w-full mx-auto">
-            <FcGoogle className="text-xl" />
-            Login With Google
-          </button>
-          <button onClick={handleGithub} className="btn w-full mx-auto">
-            <FaGithub className="text-xl" />
-            Login With Github
-          </button>
+          <FcGoogle className="text-xl" />
+          Login With Google
+        </button>
+        <button onClick={handleGithub} className="btn w-full mx-auto">
+          <FaGithub className="text-xl" />
+          Login With Github
+        </button>
         </form>
         <p className="text-center text-lg">
           Do not have an account?
