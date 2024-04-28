@@ -17,7 +17,7 @@ const Navbar = () => {
     }
   }, [user]);
   if (loading) {
-    return <progress className="progress w-56"></progress>;
+    return <progress className="progress w-56 flex justify-center items-center"></progress>;
   }
   const handleLogOut = () => {
     logOut()
@@ -72,7 +72,7 @@ const Navbar = () => {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+            className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 z-40"
           >
             {links}
           </ul>
