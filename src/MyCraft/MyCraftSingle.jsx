@@ -2,7 +2,7 @@ import { FaStar } from "react-icons/fa6";
 import { TbCoinTakaFilled } from "react-icons/tb";
 import Swal from "sweetalert2";
 
-const MyCraftSingle = ({ craft }) => {
+const MyCraftSingle = ({ craft , singleCraft , setSingleCraft }) => {
   const {
     _id,
     itemName,
@@ -35,6 +35,8 @@ const MyCraftSingle = ({ craft }) => {
                         text: "Your Coffee has been deleted.",
                         icon: "success"
                       });
+                      const remaining = singleCraft.filter(craft => craft._id !== _id);
+                      setSingleCraft(remaining);
                 }
             })
           }
