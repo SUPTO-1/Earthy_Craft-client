@@ -45,6 +45,9 @@ const Navbar = () => {
       <li className="font-poppins ">
         <NavLink to="/add">Add Craft Item</NavLink>
       </li>
+      <li className="font-poppins ">
+        <NavLink to={`/myCraft/${user?.email}`}>My Art & Craft</NavLink>
+      </li>
     </>
   );
   return (
