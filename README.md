@@ -4,7 +4,7 @@ EarthyCraft is an online platform dedicated to showcasing and sharing various cr
 
 ## Live Site
 
-[EarthyCraft](https://EarthyCraft.com)
+[EarthyCraft](https://earthycraft-32095.web.app)
 
 ## Features
 
