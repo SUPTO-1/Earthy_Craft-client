@@ -6,6 +6,14 @@ EarthyCraft is an online platform dedicated to showcasing and sharing various cr
 
 [EarthyCraft](https://earthycraft-32095.web.app)
 
+## Jute & Wooden Crafts
+
+Welcome to the world of Jute & Wooden Crafts! Dive into the beauty of natural materials and explore the craftsmanship that goes into creating stunning pieces. From rustic home decor to eco-friendly accessories, Jute & Wooden Crafts offer a unique blend of sustainability and artistry.
+
+Discover intricately woven jute baskets, elegantly carved wooden sculptures, and everything in between. Join us in celebrating the beauty of nature through these timeless crafts.
+
+If you're passionate about Jute & Wooden Crafts, don't hesitate to showcase your creations on EarthyCraft. Share your techniques, inspirations, and love for these materials with our vibrant community of artisans and enthusiasts. Let your creativity shine and inspire others to explore the wonders of Jute & Wooden Crafts.
+
 ## Features
 
 - **Explore Diverse Crafts:** Discover a wide range of crafts, from intricate Jute & Wooden Crafts to delicate ceramics and vibrant textiles.
@@ -20,4 +28,3 @@ To enhance user experience and add visual appeal to our platform, we have instal
 
 - **React Awesome Reveal**: A library for animating elements as they enter the viewport.
 - **React Simple Typewriter**: Allows us to create typewriter-style text animations.
-
