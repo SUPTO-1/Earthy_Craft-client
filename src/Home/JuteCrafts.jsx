@@ -7,7 +7,7 @@ const JuteCrafts = () => {
   const [allData, setAllData] = useState(false);
 
   useEffect(() => {
-    fetch("http://localhost:5000/crafts")
+    fetch("https://earthy-craft-server.vercel.app/crafts")
       .then((res) => res.json())
       .then((data) => setCrafts(data));
   }, []);

@@ -1,6 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import MyCraftSingle from "./MyCraftSingle";
 import { useState } from "react";
+import { Helmet } from "react-helmet";
 
 const MyCraft = () => {
   const myCraft = useLoaderData();
@@ -20,7 +21,10 @@ const MyCraft = () => {
     }
   }
   return (
-    <div className="px-16">
+    <div className="md:px-16">
+      <Helmet>
+        <title>My Art & Craft List</title>
+      </Helmet>
       <h2 className="text-3xl font-poppins font-bold text-center mb-10 text-[#3A4256]">
         My Art & Craft List
       </h2>

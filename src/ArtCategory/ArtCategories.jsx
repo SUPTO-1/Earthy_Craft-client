@@ -4,7 +4,7 @@ import ArtCategory from "./ArtCategory";
 const ArtCategories = () => {
     const [categories, setCategories] = useState([]);
     useEffect(()=>{
-        fetch('http://localhost:5000/subcategory')
+        fetch('https://earthy-craft-server.vercel.app/subcategory')
         .then(res=>res.json())
         .then(data=>setCategories(data))
     },[])

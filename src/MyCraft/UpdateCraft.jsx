@@ -23,7 +23,7 @@ const UpdateCraft = () => {
 
         // server e pathano hobe
 
-        fetch(`http://localhost:5000/crafts/${craft._id}`, {
+        fetch(`https://earthy-craft-server.vercel.app/crafts/${craft._id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

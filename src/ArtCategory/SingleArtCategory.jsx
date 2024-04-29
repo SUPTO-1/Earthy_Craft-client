@@ -1,12 +1,16 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import SpecificSubCategory from "./SpecificSubCategory";
 import { Typewriter } from "react-simple-typewriter";
+import { Helmet } from "react-helmet";
 const SingleArtCategory = () => {
     const subcategoryCraft = useLoaderData();
     const subcategoryName = useParams().subcategoryName;
     // console.log(subcategoryCraft);
     return (
         <div className="md:my-16 md:px-16">
+            <Helmet>
+                <title>{subcategoryName}</title>
+            </Helmet>
             <h1 className="text-3xl text-center font-lato font-bold mb-10"><Typewriter
             words={[subcategoryName]}
             loop={true}

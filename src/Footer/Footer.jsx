@@ -2,7 +2,7 @@ import logo from '../../public/images/logo.png';
 import { IoCallSharp } from "react-icons/io5";
 const Footer = () => {
   return (
-    <footer className="footer footer-center p-10 mt-10 font-poppins text-[#253b34] border-2 shadow-lg m-4 rounded-lg">
+    <footer className="footer footer-center mt-10 font-poppins py-10 text-[#253b34] border-2 shadow-lg rounded-lg">
       <aside>
         <img className='w-28 mb-6 ' src={logo} alt="" />
         <p className="font-bold">

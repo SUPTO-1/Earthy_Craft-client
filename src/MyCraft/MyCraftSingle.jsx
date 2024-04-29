@@ -25,7 +25,7 @@ const MyCraftSingle = ({ craft , singleCraft , setSingleCraft }) => {
         confirmButtonText: "Yes, delete it!"
       }).then(result =>{
           if(result.isConfirmed){
-            fetch(`http://localhost:5000/crafts/${_id}`,{
+            fetch(`https://earthy-craft-server.vercel.app/crafts/${_id}`,{
                 method:'DELETE',
             })
             .then(res=>res.json())
@@ -46,28 +46,28 @@ const MyCraftSingle = ({ craft , singleCraft , setSingleCraft }) => {
   return (
     <div className="card rounded-lg bg-base-100 shadow-lg border-2">
       <div className="card-body mb-2">
-        <img className="h-[400px] rounded-lg" src={photo} alt="" />
+        <img className="h-[300px] md:h-[400px] rounded-lg" src={photo} alt="" />
       </div>
-      <div className="p-8">
-        <h2 className="text-2xl text-center font-poppins font-bold mb-6 text-[#3A4256]">
+      <div className="p-6 md:p-8">
+        <h2 className="text-lg md:text-2xl text-center font-poppins font-bold mb-6 text-[#3A4256]">
           {itemName}
         </h2>
         <div className="flex justify-between mb-10">
-          <h2 className="text-xl text-[#3A4256] font-lato font-bold">
+          <h2 className="text-lg md:text-2xl text-[#3A4256] font-lato font-bold">
             Price:{" "}
-            <TbCoinTakaFilled className="inline text-3xl text-[#3A4256]" />{" "}
+            <TbCoinTakaFilled className="inline text-xl md:text-3xl text-[#3A4256]" />{" "}
             {price}
           </h2>
-          <h2 className="text-2xl text-[#3A4256] font-lato font-bold">
+          <h2 className="text-lg md:text-2xl text-[#3A4256] font-lato font-bold">
             {" "}
-            {rating} <FaStar className="-mt-2 inline text-2xl text-[#3A4256]" />
+            {rating} <FaStar className="-mt-2 inline text-xl md:text-3xl text-[#3A4256]" />
           </h2>
         </div>
         <div className="flex justify-between">
-          <h2 className="text-xl text-[#3A4256] font-lato font-bold">
+          <h2 className="text-sm md:text-xl text-[#3A4256] font-lato font-bold">
             Customization : {customization}
           </h2>
-          <h2 className="text-xl text-[#3A4256] font-lato font-bold">
+          <h2 className="text-sm md:text-xl text-[#3A4256] font-lato font-bold">
             Stock: {stock}
           </h2>
         </div>

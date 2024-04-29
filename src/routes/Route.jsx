@@ -41,22 +41,22 @@ const routes = createBrowserRouter([
             {
                 path:'/craftDetails/:id',
                 element:<PrivateRoute><CraftDetails></CraftDetails></PrivateRoute>,
-                loader:({params})=>fetch(`http://localhost:5000/crafts/${params.id}`)
+                loader:({params})=>fetch(`https://earthy-craft-server.vercel.app/crafts/${params.id}`)
             },
             {
                 path:'/myCraft/:email',
                 element:<PrivateRoute><MyCraft></MyCraft></PrivateRoute>,
-                loader:({params})=>fetch(`http://localhost:5000/crafts/user/${params.email}`)
+                loader:({params})=>fetch(`https://earthy-craft-server.vercel.app/crafts/user/${params.email}`)
             },
             {
                 path:`/updateCraft/:id`,
                 element:<PrivateRoute><UpdateCraft></UpdateCraft></PrivateRoute>,
-                loader:({params})=>fetch(`http://localhost:5000/crafts/${params.id}`)
+                loader:({params})=>fetch(`https://earthy-craft-server.vercel.app/crafts/${params.id}`)
             },
             {
                 path:'/singleartcategory/:subcategoryName',
                 element:<SingleArtCategory></SingleArtCategory>,
-                loader:({params})=>fetch(`http://localhost:5000/subcategory/${params.subcategoryName}`)
+                loader:({params})=>fetch(`https://earthy-craft-server.vercel.app/subcategory/${params.subcategoryName}`)
             }
         ]
     }

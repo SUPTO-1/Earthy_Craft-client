@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet';
 import Swal from 'sweetalert2'
 const AddCraft = () => {
   const handleAddCraft = (e) => {
@@ -18,7 +19,7 @@ const AddCraft = () => {
     console.log(email, name, itemName, subcategoryName, photo, stock, price, rating, customization, time);
 
     //send to the data
-    fetch('http://localhost:5000/crafts', {
+    fetch('https://earthy-craft-server.vercel.app/crafts', {
       method: 'POST',
       headers:
       {
@@ -43,8 +44,11 @@ const AddCraft = () => {
   }
   return (
     <div>
+      <Helmet>
+        <title>Add Craft</title>
+      </Helmet>
       <h2 className="text-3xl font-poppins font-bold text-center mb-10 text-[#3A4256]">Add Craft</h2>
-      <form onSubmit={handleAddCraft} className="card-body p-16 bg-slate-100 mx-4 rounded-lg shadow-md">
+      <form onSubmit={handleAddCraft} className="card-body md:p-16 bg-slate-100 mx-4 rounded-lg shadow-md">
         <div className="md:flex gap-5">
         <div className="form-control w-full mx-auto">
           <label className="label">

@@ -7,6 +7,7 @@ import { AuthContext } from "../Providers/AuthProvider";
 import Swal from "sweetalert2";
 import { GithubAuthProvider } from "firebase/auth";
 import { GoogleAuthProvider } from "firebase/auth";
+import { Helmet } from "react-helmet";
 const LogIn = () => {
   const { logIn, googleSignIn, githubSignIn } = useContext(AuthContext);
   const githubProvider = new GithubAuthProvider();
@@ -80,7 +81,10 @@ const LogIn = () => {
       });
   };
   return (
-    <div className="px-16 py-6 mx-2 md:mx-16 font-poppins lg:flex flex-row-reverse gap-5 border-2 rounded-lg shadow-lg">
+    <div className="md:px-16 md:py-6 mx-2 md:mx-16 font-poppins lg:flex flex-row-reverse gap-5 border-2 rounded-lg shadow-lg">
+      <Helmet>
+        <title>LogIn</title>
+      </Helmet>
       <div className="flex-1">
         <img className="w-full rounded-lg" src={login} alt="" />
       </div>

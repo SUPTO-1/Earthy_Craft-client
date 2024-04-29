@@ -77,7 +77,7 @@ const Navbar = () => {
             {links}
           </ul>
         </div>
-        <a className="btn btn-ghost  text-[16px] md:text-[24px]">EarthyCraft</a>
+        <a className="btn btn-ghost text-sm pl-0 md:text-[24px]">EarthyCraft</a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{links}</ul>
@@ -85,15 +85,15 @@ const Navbar = () => {
       {!user ? (
         <div className="navbar-end">
           <Link to="/login">
-            <a className="text-[#253b34] md:text-[24px] md:font-bold font-poppins">
+            <a className="text-[#253b34] text-xs md:text-[24px] md:font-bold font-poppins">
               Login
             </a>
           </Link>
-          <span className="text-[#253b34] md:text-[24px] md:ml-2 md:font-bold font-poppins">
+          <span className="text-[#253b34] text-xs md:text-[24px] md:ml-2 md:font-bold font-poppins">
             /
           </span>
           <Link to="/register">
-            <a className="text-[#253b34] md:text-[24px] md:ml-2 font-poppins md:font-bold">
+            <a className="text-[#253b34] text-xs md:text-[24px] md:ml-2 font-poppins md:font-bold">
               Sign Up
             </a>
           </Link>
@@ -111,11 +111,11 @@ const Navbar = () => {
             </div>
           </div>
           <Link onClick={handleLogOut}>
-            <a className="btn w-[100px]">Logout</a>
+            <a className="btn md:w-[100px]">Logout</a>
           </Link>
         </div>
       )}
-      <div className="ml-6">
+      <div className="ml-2 md:ml-6">
         <label className="swap swap-rotate">
           {/* this hidden checkbox controls the state */}
           <input
@@ -126,7 +126,7 @@ const Navbar = () => {
 
           {/* sun icon */}
           <svg
-            className="swap-off fill-current w-10 h-10"
+            className="swap-off fill-current w-6 h-6 md:w-10 md:h-10"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
           >
@@ -135,7 +135,7 @@ const Navbar = () => {
 
           {/* moon icon */}
           <svg
-            className="swap-on fill-current w-10 h-10"
+            className="swap-on fill-current w-6 h-6 md:w-10 md:h-10"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
           >

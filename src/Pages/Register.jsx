@@ -3,6 +3,7 @@ import login from "../../public/images/signin.jpg";
 import { useContext } from "react";
 import { AuthContext } from "../Providers/AuthProvider";
 import Swal from 'sweetalert2'
+import { Helmet } from "react-helmet";
 // import 'react-toastify/dist/ReactToastify.css';
 const Register = () => {
     const {createUser,setUser} = useContext(AuthContext);
@@ -75,7 +76,10 @@ const Register = () => {
     //authentication here ends
   }
   return (
-    <div className="px-16 py-10 mx-2 md:mx-16 font-poppins lg:flex flex-row-reverse gap-5 border-2 rounded-lg shadow-lg">
+    <div className="md:px-16 py-10 mx-2 md:mx-16 font-poppins lg:flex flex-row-reverse gap-5 border-2 rounded-lg shadow-lg">
+      <Helmet>
+        <title>Register</title>
+      </Helmet>
       <div className="flex-1">
         <img className="w-full rounded-lg" src={login} alt="" />
       </div>
