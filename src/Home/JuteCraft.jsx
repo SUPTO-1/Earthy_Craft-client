@@ -5,7 +5,7 @@ const JuteCraft = ({craft}) => {
     return (
         <div className="card rounded-lg bg-base-100 shadow-lg border-2">
       <div className="card-body">
-        <img className="h-[400px] rounded-lg" src={photo} alt="" />
+        <img className="sm:h-[300px] md:h-[400px] rounded-lg" src={photo} alt="" />
       </div>
       <div className="p-8">
         <h2 className="text-2xl text-center font-poppins font-bold mb-6 text-[#3A4256]">

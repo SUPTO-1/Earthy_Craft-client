@@ -11,7 +11,7 @@ const CraftDetails = () => {
             <h2 className="text-3xl font-poppins font-bold text-center mb-24 text-[#3A4256]">Details of {itemName}</h2>
             <div className="px-16 md:flex gap-10">
             <div className="flex-1 border-2 border-slate-200 p-10 rounded-lg sm:mb-6 md:mb-0">
-                <img src={photo} alt="" />
+                <img className="sm:h-[300px] md:h-[400px]" src={photo} alt="" />
             </div>
             <div className="flex-1">
                 <div className="md:flex sm:mt-6 md:mt-0 justify-between">

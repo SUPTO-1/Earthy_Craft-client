@@ -17,7 +17,7 @@ const Navbar = () => {
     }
   }, [user]);
   if (loading) {
-    return <progress className="progress w-56 flex justify-center items-center"></progress>;
+    return <progress className="progress w-56 flex justify-center items-center mx-auto mt-auto"></progress>;
   }
   const handleLogOut = () => {
     logOut()
