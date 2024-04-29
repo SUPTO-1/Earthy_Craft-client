@@ -1,5 +1,6 @@
 import { FaStar } from "react-icons/fa6";
 import { TbCoinTakaFilled } from "react-icons/tb";
+import { Link } from "react-router-dom";
 const JuteCraft = ({craft}) => {
     const {photo,itemName,subcategoryName,price,stock,rating,customization,time,description} = craft;
     return (
@@ -39,6 +40,7 @@ const JuteCraft = ({craft}) => {
             Time: {time}
           </h2>
         </div>
+        <Link to={`/craftDetails/${craft._id}`}><button className="btn bg-slate-700 text-white my-6 w-full">View Details</button></Link>
       </div>
     </div>
     );
