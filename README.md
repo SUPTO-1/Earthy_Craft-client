@@ -1,10 +1,10 @@
-# CraftyHub
+# earthyCraft
 
 CraftyHub is an online platform dedicated to showcasing and sharing various crafts made by talented artisans from around the world.
 
 ## Live Site
 
-[CraftyHub](https://laterwillbeadded.com)
+[EarthyCraft](https://laterwillbeadded.com)
 
 ## Features
 
