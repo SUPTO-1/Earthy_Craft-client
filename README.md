@@ -1,8 +1,16 @@
-# React + Vite
+# CraftyHub
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+CraftyHub is an online platform dedicated to showcasing and sharing various crafts made by talented artisans from around the world.
 
-Currently, two official plugins are available:
+## Live Site
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+[CraftyHub](https://laterwillbeadded.com)
+
+## Features
+
+- **Explore Diverse Crafts:** Discover a wide range of crafts, from intricate Jute & Wooden Crafts to delicate ceramics and vibrant textiles.
+- **User Authentication:** Securely log in or register to access exclusive features such as adding your own crafts or managing your profile.
+- **Add Your Crafts:** Showcase your creativity by adding your crafts to our platform. Share your techniques and inspirations with a community of fellow craft enthusiasts.
+- **Personalized Experience:** Create and customize your profile, save favorite crafts, and receive personalized recommendations based on your interests.
+- **Craft Details and Updates:** Dive into the details of each craft with comprehensive descriptions and high-quality images. Stay updated on the latest craft trends and techniques.
+
