@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBLgW3K2E1VSeI_VZ2g7jxNL7GHxl1EbPE",
-  authDomain: "earthycraft-32095.firebaseapp.com",
-  projectId: "earthycraft-32095",
-  storageBucket: "earthycraft-32095.appspot.com",
-  messagingSenderId: "61375352203",
-  appId: "1:61375352203:web:7a465b689e818e8fd6f38e"
+  apiKey: import.meta.env.VITE_APIKEY,
+  authDomain: import.meta.env.VITE_AUTHDOMAIN,
+  projectId: import.meta.env.VITE_PROJECTID,
+  storageBucket: import.meta.env.VITE_STORAGEBUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGINGSENDERID,
+  appId: import.meta.env.VITE_APPID
 };
 
 // Initialize Firebase
