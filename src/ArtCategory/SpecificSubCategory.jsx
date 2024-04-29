@@ -1,6 +1,6 @@
 import { FaStar } from "react-icons/fa6";
 import { TbCoinTakaFilled } from "react-icons/tb";
-const JuteCraft = ({craft}) => {
+const SpecificSubCategory = ({craft}) => {
     const {photo,itemName,subcategoryName,price,stock,rating,customization,time,description} = craft;
     return (
         <div className="card rounded-lg bg-base-100 shadow-lg border-2">
@@ -40,8 +40,9 @@ const JuteCraft = ({craft}) => {
           </h2>
         </div>
       </div>
+      <button className="btn bg-slate-700 text-white m-6">View Details</button>
     </div>
     );
 };
 
-export default JuteCraft;
+export default SpecificSubCategory;

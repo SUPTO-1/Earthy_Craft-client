@@ -9,6 +9,7 @@ import CraftDetails from "../AllCrafts/CraftDetails";
 import MyCraft from "../MyCraft/MyCraft";
 import UpdateCraft from "../MyCraft/UpdateCraft";
 import Error from "../Error/Error";
+import SingleArtCategory from "../ArtCategory/SingleArtCategory";
 
 const routes = createBrowserRouter([
     {
@@ -50,6 +51,11 @@ const routes = createBrowserRouter([
                 path:`/updateCraft/:id`,
                 element:<UpdateCraft></UpdateCraft>,
                 loader:({params})=>fetch(`http://localhost:5000/crafts/${params.id}`)
+            },
+            {
+                path:'/singleartcategory/:subcategoryName',
+                element:<SingleArtCategory></SingleArtCategory>,
+                loader:({params})=>fetch(`http://localhost:5000/subcategory/${params.subcategoryName}`)
             }
         ]
     }
