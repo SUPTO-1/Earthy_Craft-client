@@ -1,4 +1,5 @@
 import logo from '../../public/images/logo.png';
+import { IoCallSharp } from "react-icons/io5";
 const Footer = () => {
   return (
     <footer className="footer footer-center p-10 mt-10 font-poppins text-[#253b34] border-2 shadow-lg m-4 rounded-lg">
@@ -6,6 +7,7 @@ const Footer = () => {
         <img className='w-28 mb-6 ' src={logo} alt="" />
         <p className="font-bold">
           EarthyCraft <br />
+          <IoCallSharp className='inline text-lg text-[#3A4256] my-4' /><span className='text-[#3A4256] text-lg'>+880156165513</span><br />
           Providing reliable tech since 1992
         </p>
         <p>Copyright © 2024 - All right reserved</p>

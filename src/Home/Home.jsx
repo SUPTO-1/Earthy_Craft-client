@@ -6,7 +6,7 @@ import QuestionAndAnswer from "./QuestionAndAnswer";
 
 const Home = () => {
     return (
-        <div className="px-16">
+        <div className="md:px-16">
             <Banner></Banner>
             <JuteCrafts></JuteCrafts>
             <ArtCategories></ArtCategories>

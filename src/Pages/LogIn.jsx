@@ -1,6 +1,6 @@
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import login from "../../public/images/login.jpg";
 import { useContext } from "react";
 import { AuthContext } from "../Providers/AuthProvider";
@@ -11,6 +11,8 @@ const LogIn = () => {
   const { logIn, googleSignIn, githubSignIn } = useContext(AuthContext);
   const githubProvider = new GithubAuthProvider();
   const provider = new GoogleAuthProvider();
+  const location = useLocation();
+  const navigate = useNavigate();
   const handleLogin = (e) => {
     e.preventDefault();
     const form = new FormData(e.target);
@@ -30,6 +32,7 @@ const LogIn = () => {
           icon: "success",
           confirmButtonText: "Okay",
         });
+        navigate(location?.state ? location.state: "/");
       })
       .catch((error) => {
         console.log(error);

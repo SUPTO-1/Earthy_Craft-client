@@ -10,6 +10,7 @@ import MyCraft from "../MyCraft/MyCraft";
 import UpdateCraft from "../MyCraft/UpdateCraft";
 import Error from "../Error/Error";
 import SingleArtCategory from "../ArtCategory/SingleArtCategory";
+import PrivateRoute from "./PrivateRoute";
 
 const routes = createBrowserRouter([
     {
@@ -31,7 +32,7 @@ const routes = createBrowserRouter([
             },
             {
                 path:'/add',
-                element:<AddCraft></AddCraft>
+                element:<PrivateRoute><AddCraft></AddCraft></PrivateRoute>
             },
             {
                 path:'/all',
@@ -39,17 +40,17 @@ const routes = createBrowserRouter([
             },
             {
                 path:'/craftDetails/:id',
-                element:<CraftDetails></CraftDetails>,
+                element:<PrivateRoute><CraftDetails></CraftDetails></PrivateRoute>,
                 loader:({params})=>fetch(`http://localhost:5000/crafts/${params.id}`)
             },
             {
                 path:'/myCraft/:email',
-                element:<MyCraft></MyCraft>,
+                element:<PrivateRoute><MyCraft></MyCraft></PrivateRoute>,
                 loader:({params})=>fetch(`http://localhost:5000/crafts/user/${params.email}`)
             },
             {
                 path:`/updateCraft/:id`,
-                element:<UpdateCraft></UpdateCraft>,
+                element:<PrivateRoute><UpdateCraft></UpdateCraft></PrivateRoute>,
                 loader:({params})=>fetch(`http://localhost:5000/crafts/${params.id}`)
             },
             {

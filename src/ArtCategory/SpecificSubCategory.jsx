@@ -1,5 +1,6 @@
 import { FaStar } from "react-icons/fa6";
 import { TbCoinTakaFilled } from "react-icons/tb";
+import { Link } from "react-router-dom";
 const SpecificSubCategory = ({craft}) => {
     const {photo,itemName,subcategoryName,price,stock,rating,customization,time,description} = craft;
     return (
@@ -40,7 +41,7 @@ const SpecificSubCategory = ({craft}) => {
           </h2>
         </div>
       </div>
-      <button className="btn bg-slate-700 text-white m-6">View Details</button>
+      <Link to={`/craftDetails/${craft._id}`}><button className="btn bg-slate-700 text-white m-6">View Details</button></Link>
     </div>
     );
 };
