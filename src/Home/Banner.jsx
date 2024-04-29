@@ -8,7 +8,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 const Banner = () => {
     return (
-        <div className='w-full md:px-16' data-aos="fade-down" data-aos-duration="1500">
+        <div className='sm:w-full md:w-11/12 mx-auto md:px-16' data-aos="fade-down" data-aos-duration="1500">
             <Swiper
       // install Swiper modules
       modules={[Navigation, Autoplay, Pagination, Scrollbar, A11y]}

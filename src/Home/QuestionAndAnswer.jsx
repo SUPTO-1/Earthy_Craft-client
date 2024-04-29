@@ -1,3 +1,4 @@
+import { Bounce } from "react-awesome-reveal";
 const QuestionAndAnswer = () => {
   return (
     <div>
@@ -18,6 +19,7 @@ const QuestionAndAnswer = () => {
                   How many outlets does your shop have and Where they are ?
                 </div>
                 <div className="">
+                  <Bounce>
                   <p className="text-left text-[16px] font-lato px-8">
                     Our shop has established a robust presence with 10
                     strategically located outlets across Bangladesh. From the
@@ -26,6 +28,7 @@ const QuestionAndAnswer = () => {
                     picturesque landscapes of Sylhet, our outlets cater to
                     diverse communities.{" "}
                   </p>
+                  </Bounce>
                 </div>
               </div>
               <div className="collapse collapse-arrow join-item border border-base-300">
@@ -34,6 +37,7 @@ const QuestionAndAnswer = () => {
                   How do I place an order online?
                 </div>
                 <div className="collapse-content">
+                  <Bounce duration={1000} damping={0.1}>
                   <p className="text-left text-[16px] font-lato px-8">
                     To order online, visit our website and browse our diverse
                     product range. Add desired items to your cart, proceed to
@@ -43,6 +47,7 @@ const QuestionAndAnswer = () => {
                     delivery details. Our customer support team is available for
                     any assistance needed.
                   </p>
+                  </Bounce>
                 </div>
               </div>
               <div className="collapse collapse-arrow join-item border border-base-300">
@@ -51,7 +56,9 @@ const QuestionAndAnswer = () => {
                 Discount criteria
                 </div>
                 <div className="collapse-content">
+                  <Bounce>
                   <p className="text-left text-[16px] font-lato px-8">For every purchase totaling 1000 taka or more, customers receive a 10% discount on their entire order. This promotion is applicable to all items in our store and is automatically applied at checkout. Hurry, offer ends next week!</p>
+                  </Bounce>
                 </div>
               </div>
               <div className="collapse collapse-arrow join-item border border-base-300">
@@ -60,7 +67,9 @@ const QuestionAndAnswer = () => {
                 Are your products eco-friendly?
                 </div>
                 <div className="collapse-content">
-                  <p className="text-left text-[16px] font-lato px-8">Yes, our products are eco-friendly, crafted with a commitment to sustainability. We prioritize using renewable materials such as jute and wood, sourced from ethical and environmentally responsible suppliers.</p>
+                <Bounce>
+                <p className="text-left text-[16px] font-lato px-8">Yes, our products are eco-friendly, crafted with a commitment to sustainability. We prioritize using renewable materials such as jute and wood, sourced from ethical and environmentally responsible suppliers.</p>
+                </Bounce>
                 </div>
               </div>
               <div className="collapse collapse-arrow join-item border border-base-300">
@@ -69,7 +78,9 @@ const QuestionAndAnswer = () => {
                 Do you offer wholesale pricing for bulk orders?
                 </div>
                 <div className="collapse-content">
+                  <Bounce>
                   <p className="text-left text-[16px] font-lato px-8">Yes, we offer wholesale pricing for bulk orders. Our wholesale program caters to businesses and organizations seeking larger quantities of our products. Contact our wholesale team to discuss your needs and receive personalized assistance. We strive to provide competitive pricing and excellent service to meet your bulk purchase requirements efficiently.</p>
+                  </Bounce>
                 </div>
               </div>
               <div className="collapse collapse-arrow join-item border border-base-300">
@@ -78,7 +89,9 @@ const QuestionAndAnswer = () => {
                 Are your products suitable for gifts?
                 </div>
                 <div className="collapse-content">
+                  <Bounce>
                   <p className="text-left text-[16px] font-lato px-8">Yes, our products are perfect for gifts! Whether it is a birthday, anniversary, or any special occasion, our unique jute and wooden crafts make thoughtful and memorable gifts. With a variety of options to choose from, you are sure to find the perfect present for your loved ones.</p>
+                  </Bounce>
                 </div>
               </div>
               <div className="collapse collapse-arrow join-item border border-base-300">
@@ -87,7 +100,9 @@ const QuestionAndAnswer = () => {
                 What is your return policy?
                 </div>
                 <div className="collapse-content">
+                  <Bounce>
                   <p className="text-left text-[16px] font-lato px-8">We want you to be completely satisfied with your purchase. If for any reason you are not happy with your order, please contact us within 30 days for a refund or exchange.</p>
+                  </Bounce>
                 </div>
               </div>
               <div className="collapse collapse-arrow join-item border border-base-300">
@@ -96,7 +111,9 @@ const QuestionAndAnswer = () => {
                 Do you ship internationally?
                 </div>
                 <div className="collapse-content">
+                  <Bounce>
                   <p className="text-left text-[16px] font-lato px-8">Yes, we offer international shipping for our products. Shipping rates and delivery times may vary depending on the destination.</p>
+                  </Bounce>
                 </div>
               </div>
               <div className="collapse collapse-arrow join-item border border-base-300">
@@ -105,7 +122,9 @@ const QuestionAndAnswer = () => {
                 Where are your products made?
                 </div>
                 <div className="collapse-content">
+                  <Bounce>
                   <p className="text-left text-[16px] font-lato px-8">Our jute and wooden crafts are handcrafted with care by skilled artisans, either locally or sourced from ethical and fair-trade organizations.</p>
+                  </Bounce>
                 </div>
               </div>
               <div className="collapse collapse-arrow join-item border border-base-300">
@@ -114,7 +133,9 @@ const QuestionAndAnswer = () => {
                 How do I care for my jute and wooden items?
                 </div>
                 <div className="collapse-content">
+                  <Bounce>
                   <p className="text-left text-[16px] font-lato px-8">For jute products, gentle spot cleaning with a damp cloth is recommended. Wooden items should be kept away from direct sunlight and excessive moisture to maintain their beauty and durability.</p>
+                  </Bounce>
                 </div>
               </div>
               <div className="collapse collapse-arrow join-item border border-base-300">
@@ -123,7 +144,9 @@ const QuestionAndAnswer = () => {
                 Do you offer customization options?
                 </div>
                 <div className="collapse-content">
+                  <Bounce>
                   <p className="text-left text-[16px] font-lato px-8">Absolutely! We provide customization services to tailor our products to your specific preferences or requirements.</p>
+                  </Bounce>
                 </div>
               </div>
             </div>
