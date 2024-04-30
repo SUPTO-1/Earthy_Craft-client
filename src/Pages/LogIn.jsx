@@ -57,6 +57,7 @@ const LogIn = () => {
           icon: "success",
           confirmButtonText: "Okay",
         });
+        navigate(location?.state ? location.state: "/");
       })
       .catch((error) => {
         console.log(error);
@@ -73,11 +74,22 @@ const LogIn = () => {
       .then(() => {
         // const loggedUser = result.user;
         // console.log(loggedUser);
-        alert("User logged in successfully");
+        Swal.fire({
+          title: "success!",
+          text: "User logged in successfully",
+          icon: "success",
+          confirmButtonText: "Okay",
+        });
+        navigate(location?.state ? location.state: "/");
       })
       .catch((error) => {
         console.log(error);
-        alert("Password and E-mail doesn't Match");
+        Swal.fire({
+          title: "error!",
+          text: "Password and E-mail doesn't Match",
+          icon: "error",
+          confirmButtonText: "Okay",
+        });
       });
   };
   return (
@@ -120,7 +132,9 @@ const LogIn = () => {
           <div className="form-control w-full mt-6 mx-auto">
             <button className="btn btn-primary">Login</button>
           </div>
-          <button onClick={handleGoogle} className="btn mb-2 w-full mx-auto">
+        </form>
+        <div className="card-body">
+        <button onClick={handleGoogle} className="btn mb-2 w-full mx-auto">
           <FcGoogle className="text-xl" />
           Login With Google
         </button>
@@ -128,13 +142,13 @@ const LogIn = () => {
           <FaGithub className="text-xl" />
           Login With Github
         </button>
-        </form>
         <p className="text-center text-lg">
           Do not have an account?
           <Link to="/register" className="text-blue-500 ml-2 font-bold">
             Register
           </Link>
         </p>
+        </div>
       </div>
     </div>
   );
