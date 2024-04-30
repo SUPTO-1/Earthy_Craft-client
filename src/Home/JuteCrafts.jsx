@@ -5,12 +5,20 @@ import { Typewriter } from "react-simple-typewriter";
 const JuteCrafts = () => {
   const [crafts, setCrafts] = useState([]);
   const [allData, setAllData] = useState(false);
-
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     fetch("https://earthy-craft-server.vercel.app/crafts")
       .then((res) => res.json())
-      .then((data) => setCrafts(data));
+      .then((data) => {
+        setCrafts(data);
+        setLoading(false);
+      });
   }, []);
+
+  if (loading) {
+    return <progress className="progress w-56 flex justify-center items-center mx-auto mt-16"></progress>;
+  }
+
 
   const handleViewAll = () => {
     setAllData(!allData);

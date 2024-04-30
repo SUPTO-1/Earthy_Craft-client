@@ -4,12 +4,20 @@ import { Link } from "react-router-dom";
 
 const AllCrafts = () => {
   const [allCrafts, setAllCrafts] = useState([]);
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     fetch("https://earthy-craft-server.vercel.app/crafts")
       .then((res) => res.json())
-      .then((data) => setAllCrafts(data));
+      .then((data) => {
+        setAllCrafts(data)
+        setLoading(false);
+      });
   }, []);
-  console.log(allCrafts);
+  // console.log(allCrafts);
+  if(loading)
+  {
+    return <progress className="progress w-56 flex justify-center items-center mx-auto mt-16"></progress>
+  }
   return (
     <div className="sm:p-4 md:px-16 md:py-10">
       <Helmet>

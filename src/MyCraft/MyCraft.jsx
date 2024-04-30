@@ -1,23 +1,43 @@
-import { useLoaderData } from "react-router-dom";
+import {  useParams } from "react-router-dom";
 import MyCraftSingle from "./MyCraftSingle";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 
 const MyCraft = () => {
-  const myCraft = useLoaderData();
-  const [singleCraft, setSingleCraft] = useState(myCraft);
+  // const myCraft = useLoaderData();
+const {email} = useParams();
+  const [singleCraft, setSingleCraft] = useState([]);
+  const [loading, setLoading] = useState(true);
+  useEffect(()=>{
+    fetch(`https://earthy-craft-server.vercel.app/crafts/user/${email}`)
+    .then(res=>res.json())
+    .then(data=>{
+        setSingleCraft(data)
+        setLoading(false)
+    })
+  },[])
+  if(loading)
+  {
+    return <progress className="progress w-56 flex justify-center items-center mx-auto mt-16"></progress>
+  }
   const handleFilter = (e) => {
     const value = e.target.value;
     if (value === "Yes") {
-      const filter = myCraft.filter((craft) => craft.customization === "Yes");
+      const filter = singleCraft.filter((craft) => craft.customization === "Yes");
       setSingleCraft(filter);
     }
     if (value === "No") {
-      const filter = myCraft.filter((craft) => craft.customization === "No");
+      const filter = singleCraft.filter((craft) => craft.customization === "No");
       setSingleCraft(filter);
     }
     if(value === "Both"){
-        setSingleCraft(myCraft);
+      fetch(`https://earthy-craft-server.vercel.app/crafts/user/${email}`)
+    .then(res=>res.json())
+    .then(data=>{
+        setSingleCraft(data)
+        setLoading(false)
+    })
+        // setSingleCraft(myCraft);
     }
   }
   return (
