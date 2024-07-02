@@ -28,3 +28,39 @@ To enhance user experience and add visual appeal to our platform, we have instal
 
 - **React Awesome Reveal**: A library for animating elements as they enter the viewport.
 - **React Simple Typewriter**: Allows us to create typewriter-style text animations.
+
+## Cloning and Running Locally
+
+If you wish to run EarthyCraft on your local machine, follow these steps:
+
+### Prerequisites
+- Node.js installed on your machine
+- npm or yarn package manager installed
+
+### Installation
+
+1. **Clone the repository:**
+    ```bash
+    git clone [https://github.com/SUPTO-1/HealthCare_Client.git](https://github.com/SUPTO-1/Earthy_Craft-client.git)
+    ```
+
+2. **Navigate to the project directory:**
+    ```bash
+    cd earthyCraft
+    ```
+
+3. **Install dependencies:**
+    ```bash
+    npm install
+    ```
+
+4. **Start the development server:**
+    ```bash
+    npm start
+    ```
+
+5. **Open your browser and navigate to:**
+    ```plaintext
+    http://localhost:3000
+    ```
+
